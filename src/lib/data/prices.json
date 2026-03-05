@@ -1,0 +1,48 @@
+{
+  "countries": [
+    { "code": "US", "name": "United States", "currency": "USD" },
+    { "code": "DE", "name": "Germany", "currency": "EUR" },
+    { "code": "JP", "name": "Japan", "currency": "JPY" },
+    { "code": "VN", "name": "Vietnam", "currency": "VND" },
+    { "code": "GB", "name": "United Kingdom", "currency": "GBP" },
+    { "code": "CA", "name": "Canada", "currency": "CAD" }
+  ],
+  "products": [
+    {
+      "id": "iphone-16-pro-128",
+      "name": "iPhone 16 Pro (128GB)",
+      "prices": {
+        "US": 999,
+        "DE": 1199,
+        "JP": 159800,
+        "VN": 28990000,
+        "GB": 999,
+        "CA": 1449
+      }
+    },
+    {
+      "id": "macbook-air-13-m3-16-512",
+      "name": "MacBook Air 13\" M3 (16GB/512GB)",
+      "prices": {
+        "US": 1499,
+        "DE": 1749,
+        "JP": 224800,
+        "VN": 42990000,
+        "GB": 1499,
+        "CA": 1949
+      }
+    },
+    {
+      "id": "ipad-pro-11-m4-256-wifi",
+      "name": "iPad Pro 11\" M4 (256GB, Wi-Fi)",
+      "prices": {
+        "US": 1099,
+        "DE": 1319,
+        "JP": 168800,
+        "VN": 30990000,
+        "GB": 1099,
+        "CA": 1499
+      }
+    }
+  ]
+}

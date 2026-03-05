@@ -1,0 +1,7 @@
+name = "nomapples"
+main = ".svelte-kit/cloudflare/_worker.js"
+compatibility_date = "2026-03-05"
+
+[assets]
+binding = "ASSETS"
+directory = ".svelte-kit/cloudflare"
