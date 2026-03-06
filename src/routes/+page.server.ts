@@ -6,12 +6,24 @@ import { getUsdRates, toUsd } from '$lib/server/fx';
 const FX_CACHE_KEY = 'https://nomapples.local/cache/fx-usd';
 const FX_TTL_SECONDS = 60 * 60 * 6;
 
-type PageDataProduct = {
+type PageVariant = {
 	id: string;
 	name: string;
 	comparisons: ProductComparison[];
 	cheapest: ProductComparison;
 	priciest: ProductComparison;
+};
+
+type PageLine = {
+	id: string;
+	name: string;
+	variants: PageVariant[];
+};
+
+type PageFamily = {
+	id: string;
+	name: string;
+	lines: PageLine[];
 };
 
 type CachedFxPayload = {
@@ -78,17 +90,24 @@ export const load: PageServerLoad = async ({ fetch, setHeaders }) => {
 	const { rates, updatedAt, source } = await getUsdRatesCached(fetch);
 	const data = priceData as PricingData;
 
-	const products: PageDataProduct[] = data.products.map((product) => {
-		const comparisons = sortComparisons(data.countries, product.prices, rates);
-
-		return {
-			id: product.id,
-			name: product.name,
-			comparisons,
-			cheapest: comparisons[0],
-			priciest: comparisons[comparisons.length - 1]
-		};
-	});
+	const families: PageFamily[] = data.families.map((family) => ({
+		id: family.id,
+		name: family.name,
+		lines: family.lines.map((line) => ({
+			id: line.id,
+			name: line.name,
+			variants: line.variants.map((variant) => {
+				const comparisons = sortComparisons(data.countries, variant.prices, rates);
+				return {
+					id: variant.id,
+					name: variant.name,
+					comparisons,
+					cheapest: comparisons[0],
+					priciest: comparisons[comparisons.length - 1]
+				};
+			})
+		}))
+	}));
 
 	setHeaders({
 		'cache-control': 'public, max-age=180'
@@ -97,6 +116,6 @@ export const load: PageServerLoad = async ({ fetch, setHeaders }) => {
 	return {
 		ratesUpdatedAt: updatedAt,
 		rateSource: source,
-		products
+		families
 	};
 };

@@ -2,7 +2,6 @@
 	let { data } = $props();
 
 	type ViewMode = 'cards' | 'table';
-	type SortMode = 'usd-asc' | 'usd-desc' | 'delta-asc' | 'delta-desc';
 
 	const usd = new Intl.NumberFormat('en-US', {
 		style: 'currency',
@@ -18,34 +17,48 @@
 		}).format(value);
 	}
 
-	const initialProductId = data.products[0]?.id ?? '';
-	let selectedProductId = $state(initialProductId);
-	let viewMode = $state<ViewMode>('cards');
-	let sortMode = $state<SortMode>('usd-asc');
-	let showLocalPrice = $state(true);
-
-	const selectedProduct = $derived(
-		data.products.find((p: (typeof data.products)[number]) => p.id === selectedProductId) ?? data.products[0]
+	let selectedFamilyId = $state('');
+	$effect(() => {
+		if (!selectedFamilyId) selectedFamilyId = data.families[0]?.id ?? '';
+	});
+	const selectedFamily = $derived(
+		data.families.find((f: (typeof data.families)[number]) => f.id === selectedFamilyId) ?? data.families[0]
 	);
 
-	const sortedComparisons = $derived.by(() => {
-		const list = [...(selectedProduct?.comparisons ?? [])];
-		switch (sortMode) {
-			case 'usd-desc':
-				return list.sort((a, b) => b.priceUSD - a.priceUSD);
-			case 'delta-asc':
-				return list.sort((a, b) => a.deltaFromCheapestUSD - b.deltaFromCheapestUSD);
-			case 'delta-desc':
-				return list.sort((a, b) => b.deltaFromCheapestUSD - a.deltaFromCheapestUSD);
-			case 'usd-asc':
-			default:
-				return list.sort((a, b) => a.priceUSD - b.priceUSD);
+	let selectedLineId = $state('');
+	$effect(() => {
+		const firstLineId = selectedFamily?.lines[0]?.id ?? '';
+		if (!selectedFamily?.lines.some((l: (typeof selectedFamily.lines)[number]) => l.id === selectedLineId)) {
+			selectedLineId = firstLineId;
 		}
 	});
 
-	const priceMin = $derived(selectedProduct?.cheapest?.priceUSD ?? 0);
-	const priceMax = $derived(selectedProduct?.priciest?.priceUSD ?? 0);
-	const maxSpread = $derived((selectedProduct?.priciest?.priceUSD ?? 0) - (selectedProduct?.cheapest?.priceUSD ?? 0));
+	const selectedLine = $derived(
+		selectedFamily?.lines.find((l: (typeof selectedFamily.lines)[number]) => l.id === selectedLineId) ??
+			selectedFamily?.lines[0]
+	);
+
+	let selectedVariantId = $state('');
+	$effect(() => {
+		const firstVariantId = selectedLine?.variants[0]?.id ?? '';
+		if (
+			!selectedLine?.variants.some((v: (typeof selectedLine.variants)[number]) => v.id === selectedVariantId)
+		) {
+			selectedVariantId = firstVariantId;
+		}
+	});
+
+	const selectedVariant = $derived(
+		selectedLine?.variants.find((v: (typeof selectedLine.variants)[number]) => v.id === selectedVariantId) ??
+			selectedLine?.variants[0]
+	);
+
+	let viewMode = $state<ViewMode>('cards');
+	let showLocalPrice = $state(true);
+
+	const priceMin = $derived(selectedVariant?.cheapest?.priceUSD ?? 0);
+	const priceMax = $derived(selectedVariant?.priciest?.priceUSD ?? 0);
+	const maxSpread = $derived((selectedVariant?.priciest?.priceUSD ?? 0) - (selectedVariant?.cheapest?.priceUSD ?? 0));
 </script>
 
 <svelte:head>
@@ -58,13 +71,9 @@
 
 <main class="container">
 	<section class="hero card">
-		<div>
-			<p class="eyebrow">Nomad Apple Price Intelligence</p>
-			<h1>Where nomads buy Apple products smarter.</h1>
-			<p class="sub">
-				Instantly compare country pricing with USD normalization and see where the real savings are.
-			</p>
-		</div>
+		<p class="eyebrow">Nomad Apple Price Intelligence</p>
+		<h1>Where nomads buy Apple products smarter.</h1>
+		<p class="sub">Family → line → variant. Then compare country pricing instantly.</p>
 		<div class="meta">
 			<span>FX base: USD</span>
 			<span>Updated: {data.ratesUpdatedAt}</span>
@@ -74,28 +83,36 @@
 		</div>
 	</section>
 
-	<section class="controls card">
-		<div class="product-switcher" role="tablist" aria-label="Product selector">
-			{#each data.products as product}
-				<button
-					class:active={selectedProductId === product.id}
-					onclick={() => (selectedProductId = product.id)}
-					role="tab"
-					aria-selected={selectedProductId === product.id}
-				>
-					{product.name}
-				</button>
-			{/each}
+	<section class="selectors card">
+		<div>
+			<p class="label">1) Family</p>
+			<div class="chip-row">
+				{#each data.families as family}
+					<button class:active={selectedFamilyId === family.id} onclick={() => (selectedFamilyId = family.id)}>
+						{family.name}
+					</button>
+				{/each}
+			</div>
 		</div>
 
-		<div class="control-row">
+		<div>
+			<p class="label">2) Line</p>
+			<div class="chip-row">
+				{#each selectedFamily?.lines ?? [] as line}
+					<button class:active={selectedLineId === line.id} onclick={() => (selectedLineId = line.id)}>
+						{line.name}
+					</button>
+				{/each}
+			</div>
+		</div>
+
+		<div class="variant-row">
 			<label>
-				Sort
-				<select bind:value={sortMode}>
-					<option value="usd-asc">USD, lowest first</option>
-					<option value="usd-desc">USD, highest first</option>
-					<option value="delta-asc">Delta, lowest first</option>
-					<option value="delta-desc">Delta, highest first</option>
+				3) Variant
+				<select bind:value={selectedVariantId}>
+					{#each selectedLine?.variants ?? [] as variant}
+						<option value={variant.id}>{variant.name}</option>
+					{/each}
 				</select>
 			</label>
 
@@ -109,7 +126,7 @@
 
 			<label class="toggle">
 				<input type="checkbox" bind:checked={showLocalPrice} />
-				<span>Show local prices</span>
+				<span>Show local</span>
 			</label>
 		</div>
 	</section>
@@ -117,13 +134,13 @@
 	<section class="stats-grid">
 		<article class="stat card">
 			<p>Cheapest</p>
-			<h2>{selectedProduct?.cheapest?.countryName}</h2>
-			<strong>{usd.format(selectedProduct?.cheapest?.priceUSD ?? 0)}</strong>
+			<h2>{selectedVariant?.cheapest?.countryName}</h2>
+			<strong>{usd.format(selectedVariant?.cheapest?.priceUSD ?? 0)}</strong>
 		</article>
 		<article class="stat card">
 			<p>Most expensive</p>
-			<h2>{selectedProduct?.priciest?.countryName}</h2>
-			<strong>{usd.format(selectedProduct?.priciest?.priceUSD ?? 0)}</strong>
+			<h2>{selectedVariant?.priciest?.countryName}</h2>
+			<strong>{usd.format(selectedVariant?.priciest?.priceUSD ?? 0)}</strong>
 		</article>
 		<article class="stat card">
 			<p>Max spread</p>
@@ -134,7 +151,7 @@
 
 	{#if viewMode === 'cards'}
 		<section class="card-list">
-			{#each sortedComparisons as row, idx}
+			{#each selectedVariant?.comparisons ?? [] as row, idx}
 				<article class="price-card card" class:best={row.deltaFromCheapestUSD === 0}>
 					<div class="price-head">
 						<div>
@@ -176,7 +193,7 @@
 					</tr>
 				</thead>
 				<tbody>
-					{#each sortedComparisons as row}
+					{#each selectedVariant?.comparisons ?? [] as row}
 						<tr class:best={row.deltaFromCheapestUSD === 0}>
 							<td>{row.countryName} ({row.countryCode})</td>
 							{#if showLocalPrice}<td>{localMoney(row.localPrice, row.currency)}</td>{/if}
@@ -194,31 +211,6 @@
 			</table>
 		</section>
 	{/if}
-
-	<section class="method-note card">
-		<h3>How these numbers are calculated</h3>
-		<p>
-			We normalize local Apple pricing to USD using daily FX rates, then rank each country by effective USD cost.
-			This is directional pricing intelligence, not checkout-level tax and import advice.
-		</p>
-	</section>
-
-	<div class="mobile-sticky card">
-		<select bind:value={selectedProductId}>
-			{#each data.products as product}
-				<option value={product.id}>{product.name}</option>
-			{/each}
-		</select>
-		<select bind:value={sortMode}>
-			<option value="usd-asc">Lowest</option>
-			<option value="usd-desc">Highest</option>
-			<option value="delta-asc">Tightest delta</option>
-			<option value="delta-desc">Widest delta</option>
-		</select>
-		<button onclick={() => (viewMode = viewMode === 'cards' ? 'table' : 'cards')}>
-			{viewMode === 'cards' ? 'Table' : 'Cards'}
-		</button>
-	</div>
 </main>
 
 <style>
@@ -232,7 +224,7 @@
 	.container {
 		max-width: 1080px;
 		margin: 0 auto;
-		padding: 1rem 1rem 6rem;
+		padding: 1rem 1rem 2rem;
 		display: grid;
 		gap: 1rem;
 	}
@@ -244,12 +236,6 @@
 		padding: 1rem;
 	}
 
-	.hero h1 {
-		margin: 0.2rem 0 0;
-		font-size: clamp(1.6rem, 5vw, 2.2rem);
-		line-height: 1.1;
-	}
-
 	.eyebrow {
 		margin: 0;
 		font-size: 0.75rem;
@@ -259,13 +245,19 @@
 		font-weight: 600;
 	}
 
+	.hero h1 {
+		margin: 0.2rem 0 0;
+		font-size: clamp(1.6rem, 5vw, 2.2rem);
+		line-height: 1.1;
+	}
+
 	.sub {
-		margin: 0.75rem 0 0;
+		margin: 0.7rem 0 0;
 		color: #374151;
 	}
 
 	.meta {
-		margin-top: 1rem;
+		margin-top: 0.8rem;
 		display: flex;
 		flex-wrap: wrap;
 		gap: 0.5rem;
@@ -283,32 +275,43 @@
 		color: #9a3412;
 	}
 
-	.product-switcher {
-		display: flex;
-		flex-wrap: wrap;
-		gap: 0.5rem;
+	.label {
+		margin: 0 0 0.4rem;
+		font-size: 0.8rem;
+		font-weight: 700;
+		color: #4b5563;
 	}
 
-	.product-switcher button {
+	.chip-row {
+		display: flex;
+		gap: 0.5rem;
+		flex-wrap: wrap;
+	}
+
+	.chip-row button {
 		border: 1px solid #d1d5db;
 		background: #fff;
 		color: #111827;
-		padding: 0.5rem 0.75rem;
+		padding: 0.46rem 0.7rem;
 		border-radius: 999px;
 		cursor: pointer;
 		font-weight: 600;
 	}
 
-	.product-switcher button.active {
+	.chip-row button.active {
 		background: #111827;
 		color: #fff;
 		border-color: #111827;
 	}
 
-	.control-row {
-		margin-top: 0.8rem;
+	.selectors {
+		display: grid;
+		gap: 0.9rem;
+	}
+
+	.variant-row {
 		display: flex;
-		gap: 0.75rem;
+		gap: 0.7rem;
 		flex-wrap: wrap;
 		align-items: end;
 	}
@@ -331,7 +334,7 @@
 		display: flex;
 		align-items: center;
 		gap: 0.45rem;
-		padding-bottom: 0.35rem;
+		padding-bottom: 0.3rem;
 	}
 
 	.stats-grid {
@@ -444,46 +447,9 @@
 		background: #f0fdf4;
 	}
 
-	.method-note h3 {
-		margin: 0;
-	}
-
-	.method-note p {
-		color: #4b5563;
-		margin: 0.55rem 0 0;
-	}
-
-	.mobile-sticky {
-		position: fixed;
-		left: 0.75rem;
-		right: 0.75rem;
-		bottom: 0.75rem;
-		display: grid;
-		grid-template-columns: 1.2fr 1fr auto;
-		gap: 0.5rem;
-		box-shadow: 0 8px 30px rgba(0, 0, 0, 0.14);
-	}
-
-	.mobile-sticky button {
-		border: none;
-		background: #111827;
-		color: #fff;
-		padding: 0.5rem 0.75rem;
-		border-radius: 10px;
-		font-weight: 600;
-	}
-
 	@media (min-width: 768px) {
-		.container {
-			padding: 1.25rem 1.25rem 2rem;
-		}
-
 		.stats-grid {
 			grid-template-columns: repeat(3, minmax(0, 1fr));
-		}
-
-		.mobile-sticky {
-			display: none;
 		}
 	}
 </style>

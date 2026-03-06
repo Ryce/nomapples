@@ -7,42 +7,134 @@
     { "code": "GB", "name": "United Kingdom", "currency": "GBP" },
     { "code": "CA", "name": "Canada", "currency": "CAD" }
   ],
-  "products": [
+  "families": [
     {
-      "id": "iphone-16-pro-128",
-      "name": "iPhone 16 Pro (128GB)",
-      "prices": {
-        "US": 999,
-        "DE": 1199,
-        "JP": 159800,
-        "VN": 28990000,
-        "GB": 999,
-        "CA": 1449
-      }
+      "id": "mac",
+      "name": "Mac",
+      "lines": [
+        {
+          "id": "macbook-air",
+          "name": "MacBook Air",
+          "variants": [
+            {
+              "id": "macbook-air-13-m3-16-512",
+              "name": "13\" M3 · 16GB · 512GB",
+              "prices": { "US": 1499, "DE": 1749, "JP": 224800, "VN": 42990000, "GB": 1499, "CA": 1949 }
+            }
+          ]
+        },
+        {
+          "id": "macbook-pro",
+          "name": "MacBook Pro",
+          "variants": [
+            {
+              "id": "macbook-pro-14-m4pro-18-512",
+              "name": "14\" M4 Pro · 18GB · 512GB",
+              "prices": { "US": 1999, "DE": 2399, "JP": 318800, "VN": 57990000, "GB": 2099, "CA": 2699 }
+            }
+          ]
+        },
+        {
+          "id": "mac-mini",
+          "name": "Mac mini",
+          "variants": [
+            {
+              "id": "mac-mini-m4-16-512",
+              "name": "M4 · 16GB · 512GB",
+              "prices": { "US": 999, "DE": 1199, "JP": 164800, "VN": 27990000, "GB": 999, "CA": 1299 }
+            }
+          ]
+        }
+      ]
     },
     {
-      "id": "macbook-air-13-m3-16-512",
-      "name": "MacBook Air 13\" M3 (16GB/512GB)",
-      "prices": {
-        "US": 1499,
-        "DE": 1749,
-        "JP": 224800,
-        "VN": 42990000,
-        "GB": 1499,
-        "CA": 1949
-      }
+      "id": "iphone",
+      "name": "iPhone",
+      "lines": [
+        {
+          "id": "iphone-16",
+          "name": "iPhone 16",
+          "variants": [
+            {
+              "id": "iphone-16-128",
+              "name": "128GB",
+              "prices": { "US": 799, "DE": 949, "JP": 124800, "VN": 22990000, "GB": 799, "CA": 1129 }
+            }
+          ]
+        },
+        {
+          "id": "iphone-16-pro",
+          "name": "iPhone 16 Pro",
+          "variants": [
+            {
+              "id": "iphone-16-pro-128",
+              "name": "128GB",
+              "prices": { "US": 999, "DE": 1199, "JP": 159800, "VN": 28990000, "GB": 999, "CA": 1449 }
+            },
+            {
+              "id": "iphone-16-pro-256",
+              "name": "256GB",
+              "prices": { "US": 1099, "DE": 1329, "JP": 179800, "VN": 31990000, "GB": 1099, "CA": 1599 }
+            }
+          ]
+        }
+      ]
     },
     {
-      "id": "ipad-pro-11-m4-256-wifi",
-      "name": "iPad Pro 11\" M4 (256GB, Wi-Fi)",
-      "prices": {
-        "US": 1099,
-        "DE": 1319,
-        "JP": 168800,
-        "VN": 30990000,
-        "GB": 1099,
-        "CA": 1499
-      }
+      "id": "ipad",
+      "name": "iPad",
+      "lines": [
+        {
+          "id": "ipad-air",
+          "name": "iPad Air",
+          "variants": [
+            {
+              "id": "ipad-air-11-m2-256-wifi",
+              "name": "11\" M2 · 256GB · Wi‑Fi",
+              "prices": { "US": 699, "DE": 849, "JP": 106800, "VN": 20990000, "GB": 699, "CA": 949 }
+            }
+          ]
+        },
+        {
+          "id": "ipad-pro",
+          "name": "iPad Pro",
+          "variants": [
+            {
+              "id": "ipad-pro-11-m4-256-wifi",
+              "name": "11\" M4 · 256GB · Wi‑Fi",
+              "prices": { "US": 1099, "DE": 1319, "JP": 168800, "VN": 30990000, "GB": 1099, "CA": 1499 }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "watch",
+      "name": "Watch",
+      "lines": [
+        {
+          "id": "watch-series-10",
+          "name": "Watch Series 10",
+          "variants": [
+            {
+              "id": "watch-series-10-46-gps",
+              "name": "46mm · GPS",
+              "prices": { "US": 429, "DE": 499, "JP": 64800, "VN": 11990000, "GB": 429, "CA": 579 }
+            }
+          ]
+        },
+        {
+          "id": "watch-ultra-2",
+          "name": "Watch Ultra 2",
+          "variants": [
+            {
+              "id": "watch-ultra-2-49",
+              "name": "49mm",
+              "prices": { "US": 799, "DE": 899, "JP": 128800, "VN": 22990000, "GB": 799, "CA": 1099 }
+            }
+          ]
+        }
+      ]
     }
   ]
 }

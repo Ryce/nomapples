@@ -4,15 +4,27 @@ export type Country = {
 	currency: string;
 };
 
-export type Product = {
+export type ProductVariant = {
 	id: string;
 	name: string;
 	prices: Record<string, number>;
 };
 
+export type ProductLine = {
+	id: string;
+	name: string;
+	variants: ProductVariant[];
+};
+
+export type ProductFamily = {
+	id: string;
+	name: string;
+	lines: ProductLine[];
+};
+
 export type PricingData = {
 	countries: Country[];
-	products: Product[];
+	families: ProductFamily[];
 };
 
 export type ProductComparison = {
