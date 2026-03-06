@@ -1,0 +1,224 @@
+[
+  {
+    "locale": "ae",
+    "code": "AE",
+    "name": "United Arab Emirates",
+    "currency": "AED"
+  },
+  {
+    "locale": "at",
+    "code": "AT",
+    "name": "Österreich",
+    "currency": "EUR"
+  },
+  {
+    "locale": "au",
+    "code": "AU",
+    "name": "Australia",
+    "currency": "AUD"
+  },
+  {
+    "locale": "br",
+    "code": "BR",
+    "name": "Brasil",
+    "currency": "BRL"
+  },
+  {
+    "locale": "ca",
+    "code": "CA",
+    "name": "Canada (English)",
+    "currency": "CAD"
+  },
+  {
+    "locale": "cl",
+    "code": "CL",
+    "name": "Chile",
+    "currency": "CLP"
+  },
+  {
+    "locale": "cz",
+    "code": "CZ",
+    "name": "Česko",
+    "currency": "CZK"
+  },
+  {
+    "locale": "de",
+    "code": "DE",
+    "name": "Deutschland",
+    "currency": "EUR"
+  },
+  {
+    "locale": "dk",
+    "code": "DK",
+    "name": "Danmark",
+    "currency": "DKK"
+  },
+  {
+    "locale": "es",
+    "code": "ES",
+    "name": "España",
+    "currency": "EUR"
+  },
+  {
+    "locale": "fi",
+    "code": "FI",
+    "name": "Suomi",
+    "currency": "EUR"
+  },
+  {
+    "locale": "fr",
+    "code": "FR",
+    "name": "France",
+    "currency": "EUR"
+  },
+  {
+    "locale": "hk",
+    "code": "HK",
+    "name": "香港",
+    "currency": "HKD"
+  },
+  {
+    "locale": "hu",
+    "code": "HU",
+    "name": "Magyarország",
+    "currency": "HUF"
+  },
+  {
+    "locale": "ie",
+    "code": "IE",
+    "name": "Ireland",
+    "currency": "EUR"
+  },
+  {
+    "locale": "in",
+    "code": "IN",
+    "name": "India",
+    "currency": "INR"
+  },
+  {
+    "locale": "it",
+    "code": "IT",
+    "name": "Italia",
+    "currency": "EUR"
+  },
+  {
+    "locale": "jp",
+    "code": "JP",
+    "name": "日本",
+    "currency": "JPY"
+  },
+  {
+    "locale": "kr",
+    "code": "KR",
+    "name": "대한민국",
+    "currency": "KRW"
+  },
+  {
+    "locale": "lu",
+    "code": "LU",
+    "name": "Luxembourg",
+    "currency": "EUR"
+  },
+  {
+    "locale": "mx",
+    "code": "MX",
+    "name": "México",
+    "currency": "MXN"
+  },
+  {
+    "locale": "my",
+    "code": "MY",
+    "name": "Malaysia",
+    "currency": "MYR"
+  },
+  {
+    "locale": "nl",
+    "code": "NL",
+    "name": "Nederland",
+    "currency": "EUR"
+  },
+  {
+    "locale": "no",
+    "code": "NO",
+    "name": "Norge",
+    "currency": "NOK"
+  },
+  {
+    "locale": "nz",
+    "code": "NZ",
+    "name": "New Zealand",
+    "currency": "NZD"
+  },
+  {
+    "locale": "ph",
+    "code": "PH",
+    "name": "Philippines",
+    "currency": "PHP"
+  },
+  {
+    "locale": "pl",
+    "code": "PL",
+    "name": "Polska",
+    "currency": "PLN"
+  },
+  {
+    "locale": "pt",
+    "code": "PT",
+    "name": "Portugal",
+    "currency": "EUR"
+  },
+  {
+    "locale": "sa",
+    "code": "SA",
+    "name": "Saudi Arabia",
+    "currency": "SAR"
+  },
+  {
+    "locale": "sa-ar",
+    "code": "SA_AR",
+    "name": "المملكة العربية السعودية",
+    "currency": "SAR"
+  },
+  {
+    "locale": "se",
+    "code": "SE",
+    "name": "Sverige",
+    "currency": "SEK"
+  },
+  {
+    "locale": "sg",
+    "code": "SG",
+    "name": "Singapore",
+    "currency": "SGD"
+  },
+  {
+    "locale": "th",
+    "code": "TH",
+    "name": "ไทย",
+    "currency": "THB"
+  },
+  {
+    "locale": "tr",
+    "code": "TR",
+    "name": "Türkiye",
+    "currency": "TRY"
+  },
+  {
+    "locale": "tw",
+    "code": "TW",
+    "name": "台灣",
+    "currency": "TWD"
+  },
+  {
+    "locale": "uk",
+    "code": "GB",
+    "name": "United Kingdom",
+    "currency": "GBP"
+  },
+  {
+    "locale": "vn",
+    "code": "VN",
+    "name": "Việt Nam",
+    "currency": "VND"
+  }
+]

@@ -1,11 +1,190 @@
 {
   "countries": [
-    { "code": "US", "name": "United States", "currency": "USD" },
-    { "code": "DE", "name": "Germany", "currency": "EUR" },
-    { "code": "JP", "name": "Japan", "currency": "JPY" },
-    { "code": "VN", "name": "Vietnam", "currency": "VND" },
-    { "code": "GB", "name": "United Kingdom", "currency": "GBP" },
-    { "code": "CA", "name": "Canada", "currency": "CAD" }
+    {
+      "code": "AE",
+      "name": "United Arab Emirates",
+      "currency": "AED"
+    },
+    {
+      "code": "AT",
+      "name": "Österreich",
+      "currency": "EUR"
+    },
+    {
+      "code": "AU",
+      "name": "Australia",
+      "currency": "AUD"
+    },
+    {
+      "code": "BR",
+      "name": "Brasil",
+      "currency": "BRL"
+    },
+    {
+      "code": "CA",
+      "name": "Canada (English)",
+      "currency": "CAD"
+    },
+    {
+      "code": "CL",
+      "name": "Chile",
+      "currency": "CLP"
+    },
+    {
+      "code": "CZ",
+      "name": "Česko",
+      "currency": "CZK"
+    },
+    {
+      "code": "DE",
+      "name": "Deutschland",
+      "currency": "EUR"
+    },
+    {
+      "code": "DK",
+      "name": "Danmark",
+      "currency": "DKK"
+    },
+    {
+      "code": "ES",
+      "name": "España",
+      "currency": "EUR"
+    },
+    {
+      "code": "FI",
+      "name": "Suomi",
+      "currency": "EUR"
+    },
+    {
+      "code": "FR",
+      "name": "France",
+      "currency": "EUR"
+    },
+    {
+      "code": "HK",
+      "name": "香港",
+      "currency": "HKD"
+    },
+    {
+      "code": "HU",
+      "name": "Magyarország",
+      "currency": "HUF"
+    },
+    {
+      "code": "IE",
+      "name": "Ireland",
+      "currency": "EUR"
+    },
+    {
+      "code": "IN",
+      "name": "India",
+      "currency": "INR"
+    },
+    {
+      "code": "IT",
+      "name": "Italia",
+      "currency": "EUR"
+    },
+    {
+      "code": "JP",
+      "name": "日本",
+      "currency": "JPY"
+    },
+    {
+      "code": "KR",
+      "name": "대한민국",
+      "currency": "KRW"
+    },
+    {
+      "code": "LU",
+      "name": "Luxembourg",
+      "currency": "EUR"
+    },
+    {
+      "code": "MX",
+      "name": "México",
+      "currency": "MXN"
+    },
+    {
+      "code": "MY",
+      "name": "Malaysia",
+      "currency": "MYR"
+    },
+    {
+      "code": "NL",
+      "name": "Nederland",
+      "currency": "EUR"
+    },
+    {
+      "code": "NO",
+      "name": "Norge",
+      "currency": "NOK"
+    },
+    {
+      "code": "NZ",
+      "name": "New Zealand",
+      "currency": "NZD"
+    },
+    {
+      "code": "PH",
+      "name": "Philippines",
+      "currency": "PHP"
+    },
+    {
+      "code": "PL",
+      "name": "Polska",
+      "currency": "PLN"
+    },
+    {
+      "code": "PT",
+      "name": "Portugal",
+      "currency": "EUR"
+    },
+    {
+      "code": "SA",
+      "name": "Saudi Arabia",
+      "currency": "SAR"
+    },
+    {
+      "code": "SA_AR",
+      "name": "المملكة العربية السعودية",
+      "currency": "SAR"
+    },
+    {
+      "code": "SE",
+      "name": "Sverige",
+      "currency": "SEK"
+    },
+    {
+      "code": "SG",
+      "name": "Singapore",
+      "currency": "SGD"
+    },
+    {
+      "code": "TH",
+      "name": "ไทย",
+      "currency": "THB"
+    },
+    {
+      "code": "TR",
+      "name": "Türkiye",
+      "currency": "TRY"
+    },
+    {
+      "code": "TW",
+      "name": "台灣",
+      "currency": "TWD"
+    },
+    {
+      "code": "GB",
+      "name": "United Kingdom",
+      "currency": "GBP"
+    },
+    {
+      "code": "VN",
+      "name": "Việt Nam",
+      "currency": "VND"
+    }
   ],
   "families": [
     {
@@ -19,7 +198,47 @@
             {
               "id": "macbook-air-13-m3-16-512",
               "name": "13\" M3 · 16GB · 512GB",
-              "prices": { "US": 1499, "DE": 1749, "JP": 224800, "VN": 42990000, "GB": 1499, "CA": 1949 }
+              "prices": {
+                "US": 1499,
+                "DE": 1749,
+                "JP": 224800,
+                "VN": 42990000,
+                "GB": 1499,
+                "CA": 1949,
+                "AE": 4599,
+                "AT": 1199,
+                "AU": 1799,
+                "BR": 13999,
+                "CL": 1249990,
+                "CZ": 29990,
+                "DK": 9999,
+                "ES": 1199,
+                "FI": 1259,
+                "FR": 1199,
+                "HK": 8999,
+                "HU": 499,
+                "IE": 1249,
+                "IN": 119900,
+                "IT": 1249,
+                "KR": 1790000,
+                "LU": 1159,
+                "MX": 24999,
+                "MY": 4699,
+                "NL": 1199,
+                "NO": 14490,
+                "NZ": 2199,
+                "PH": 72990,
+                "PL": 5499,
+                "PT": 1249,
+                "SA": 4999,
+                "AR": 4999,
+                "SE": 13995,
+                "SG": 1599,
+                "TH": 36900,
+                "TR": 68,
+                "TW": 35900,
+                "SA_AR": 4999
+              }
             }
           ]
         },
@@ -30,7 +249,47 @@
             {
               "id": "macbook-pro-14-m4pro-18-512",
               "name": "14\" M4 Pro · 18GB · 512GB",
-              "prices": { "US": 1999, "DE": 2399, "JP": 318800, "VN": 57990000, "GB": 2099, "CA": 2699 }
+              "prices": {
+                "US": 1999,
+                "DE": 2399,
+                "JP": 318800,
+                "VN": 57990000,
+                "GB": 2099,
+                "CA": 2699,
+                "AE": 7199,
+                "AT": 1899,
+                "AU": 2699,
+                "BR": 20999,
+                "CL": 1899990,
+                "CZ": 51,
+                "DK": 14999,
+                "ES": 1929,
+                "FI": 1999,
+                "FR": 1899,
+                "HK": 13499,
+                "HU": 799,
+                "IE": 1949,
+                "IN": 189900,
+                "IT": 1949,
+                "KR": 2690000,
+                "LU": 1865,
+                "MX": 37999,
+                "MY": 6999,
+                "NL": 1929,
+                "NO": 22990,
+                "NZ": 3299,
+                "PH": 109990,
+                "PL": 8499,
+                "PT": 1949,
+                "SA": 7999,
+                "AR": 7999,
+                "SE": 51,
+                "SG": 2299,
+                "TH": 56900,
+                "TR": 105,
+                "TW": 54900,
+                "SA_AR": 7999
+              }
             }
           ]
         },
@@ -41,7 +300,47 @@
             {
               "id": "mac-mini-m4-16-512",
               "name": "M4 · 16GB · 512GB",
-              "prices": { "US": 999, "DE": 1199, "JP": 164800, "VN": 27990000, "GB": 999, "CA": 1299 }
+              "prices": {
+                "US": 999,
+                "DE": 1199,
+                "JP": 164800,
+                "VN": 27990000,
+                "GB": 999,
+                "CA": 1299,
+                "AE": 2499,
+                "AT": 702,
+                "AU": 999,
+                "BR": 7499,
+                "CL": 699990,
+                "CZ": 16990,
+                "DK": 5299,
+                "ES": 719,
+                "FI": 749,
+                "FR": 699,
+                "HK": 4599,
+                "HU": 279,
+                "IE": 729,
+                "IN": 59900,
+                "IT": 729,
+                "KR": 890000,
+                "LU": 695,
+                "MX": 14499,
+                "MY": 2499,
+                "NL": 719,
+                "NO": 8490,
+                "NZ": 1099,
+                "PH": 36990,
+                "PL": 2999,
+                "PT": 729,
+                "SA": 2799,
+                "AR": 2799,
+                "SE": 7995,
+                "SG": 849,
+                "TH": 20900,
+                "TR": 88,
+                "TW": 19900,
+                "SA_AR": 2799
+              }
             }
           ]
         }
@@ -58,7 +357,47 @@
             {
               "id": "iphone-16-128",
               "name": "128GB",
-              "prices": { "US": 799, "DE": 949, "JP": 124800, "VN": 22990000, "GB": 799, "CA": 1129 }
+              "prices": {
+                "US": 799,
+                "DE": 949,
+                "JP": 124800,
+                "VN": 22990000,
+                "GB": 799,
+                "CA": 1129,
+                "AE": 2999,
+                "AT": 849,
+                "AU": 1249,
+                "BR": 6799,
+                "CL": 899990,
+                "CZ": 19990,
+                "DK": 6499,
+                "ES": 859,
+                "FI": 899,
+                "FR": 869,
+                "HK": 5999,
+                "HU": 349,
+                "IE": 879,
+                "IN": 69900,
+                "IT": 879,
+                "KR": 1150000,
+                "LU": 840,
+                "MX": 17499,
+                "MY": 3499,
+                "NL": 869,
+                "NO": 10490,
+                "NZ": 1499,
+                "PH": 49990,
+                "PL": 3499,
+                "PT": 889,
+                "SA": 3299,
+                "AR": 3299,
+                "SE": 9495,
+                "SG": 1099,
+                "TH": 26900,
+                "TR": 66,
+                "TW": 25900,
+                "SA_AR": 3299
+              }
             }
           ]
         },
@@ -69,12 +408,26 @@
             {
               "id": "iphone-16-pro-128",
               "name": "128GB",
-              "prices": { "US": 999, "DE": 1199, "JP": 159800, "VN": 28990000, "GB": 999, "CA": 1449 }
+              "prices": {
+                "US": 999,
+                "DE": 1199,
+                "JP": 159800,
+                "VN": 28990000,
+                "GB": 999,
+                "CA": 1449
+              }
             },
             {
               "id": "iphone-16-pro-256",
               "name": "256GB",
-              "prices": { "US": 1099, "DE": 1329, "JP": 179800, "VN": 31990000, "GB": 1099, "CA": 1599 }
+              "prices": {
+                "US": 1099,
+                "DE": 1329,
+                "JP": 179800,
+                "VN": 31990000,
+                "GB": 1099,
+                "CA": 1599
+              }
             }
           ]
         }
@@ -91,7 +444,47 @@
             {
               "id": "ipad-air-11-m2-256-wifi",
               "name": "11\" M2 · 256GB · Wi‑Fi",
-              "prices": { "US": 699, "DE": 849, "JP": 106800, "VN": 20990000, "GB": 699, "CA": 949 }
+              "prices": {
+                "US": 699,
+                "DE": 849,
+                "JP": 106800,
+                "VN": 20990000,
+                "GB": 699,
+                "CA": 949,
+                "AE": 2499,
+                "AT": 89,
+                "AU": 999,
+                "BR": 7499,
+                "CL": 3750,
+                "CZ": 16490,
+                "DK": 699,
+                "ES": 50,
+                "FI": 89,
+                "FR": 56,
+                "HK": 4599,
+                "HU": 62,
+                "IE": 679,
+                "IN": 650,
+                "IT": 669,
+                "KR": 949000,
+                "LU": 86,
+                "MX": 100,
+                "MY": 2799,
+                "NL": 669,
+                "NO": 7990,
+                "NZ": 1199,
+                "PH": 42990,
+                "PL": 399,
+                "PT": 89,
+                "SA": 2699,
+                "AR": 349,
+                "SE": 995,
+                "SG": 899,
+                "TH": 21900,
+                "TR": 53,
+                "TW": 19900,
+                "SA_AR": 349
+              }
             }
           ]
         },
@@ -102,7 +495,47 @@
             {
               "id": "ipad-pro-11-m4-256-wifi",
               "name": "11\" M4 · 256GB · Wi‑Fi",
-              "prices": { "US": 1099, "DE": 1319, "JP": 168800, "VN": 30990000, "GB": 1099, "CA": 1499 }
+              "prices": {
+                "US": 1099,
+                "DE": 1319,
+                "JP": 168800,
+                "VN": 30990000,
+                "GB": 1099,
+                "CA": 1499,
+                "AE": 4199,
+                "AT": 89,
+                "AU": 1699,
+                "BR": 12499,
+                "CL": 3750,
+                "CZ": 50,
+                "DK": 699,
+                "ES": 50,
+                "FI": 89,
+                "FR": 56,
+                "HK": 7999,
+                "HU": 62,
+                "IE": 1129,
+                "IN": 650,
+                "IT": 1119,
+                "KR": 1599000,
+                "LU": 86,
+                "MX": 100,
+                "MY": 4499,
+                "NL": 1119,
+                "NO": 13490,
+                "NZ": 1999,
+                "PH": 72990,
+                "PL": 399,
+                "PT": 89,
+                "SA": 4699,
+                "AR": 349,
+                "SE": 995,
+                "SG": 1499,
+                "TH": 35900,
+                "TR": 65,
+                "TW": 32900,
+                "SA_AR": 349
+              }
             }
           ]
         }
@@ -119,7 +552,14 @@
             {
               "id": "watch-series-10-46-gps",
               "name": "46mm · GPS",
-              "prices": { "US": 429, "DE": 499, "JP": 64800, "VN": 11990000, "GB": 429, "CA": 579 }
+              "prices": {
+                "US": 429,
+                "DE": 499,
+                "JP": 64800,
+                "VN": 11990000,
+                "GB": 429,
+                "CA": 579
+              }
             }
           ]
         },
@@ -130,7 +570,14 @@
             {
               "id": "watch-ultra-2-49",
               "name": "49mm",
-              "prices": { "US": 799, "DE": 899, "JP": 128800, "VN": 22990000, "GB": 799, "CA": 1099 }
+              "prices": {
+                "US": 799,
+                "DE": 899,
+                "JP": 128800,
+                "VN": 22990000,
+                "GB": 799,
+                "CA": 1099
+              }
             }
           ]
         }
