@@ -48,6 +48,6 @@ export async function getUsdRates(fetchFn: typeof fetch): Promise<FxResult> {
 
 export function toUsd(localPrice: number, currency: string, usdRates: Record<string, number>): number {
 	const rate = usdRates[currency] ?? FALLBACK_RATES[currency];
-	if (!rate || rate <= 0) throw new Error(`Missing or invalid FX rate for ${currency}`);
+	if (!rate || rate <= 0) return Number.NaN;
 	return localPrice / rate;
 }

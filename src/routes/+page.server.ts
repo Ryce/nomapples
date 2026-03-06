@@ -64,6 +64,7 @@ function sortComparisons(countries: Country[], prices: Record<string, number>, r
 		.map((country) => {
 			const localPrice = prices[country.code];
 			const priceUSD = toUsd(localPrice, country.currency, rates);
+			if (!Number.isFinite(priceUSD) || priceUSD <= 0) return null;
 
 			return {
 				countryCode: country.code,
@@ -75,6 +76,7 @@ function sortComparisons(countries: Country[], prices: Record<string, number>, r
 				deltaPercentFromCheapest: 0
 			} satisfies ProductComparison;
 		})
+		.filter((row): row is ProductComparison => row !== null)
 		.sort((a, b) => a.priceUSD - b.priceUSD);
 
 	const cheapestUsd = comparisons[0]?.priceUSD ?? 0;
