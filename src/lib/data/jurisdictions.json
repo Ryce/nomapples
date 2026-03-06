@@ -6,6 +6,12 @@
     "currency": "AED"
   },
   {
+    "locale": "ae-ar",
+    "code": "AE_AR",
+    "name": "الإمارات العربية المتحدة",
+    "currency": "USD"
+  },
+  {
     "locale": "at",
     "code": "AT",
     "name": "Österreich",
@@ -74,7 +80,7 @@
   {
     "locale": "hk",
     "code": "HK",
-    "name": "香港",
+    "name": "Hong Kong",
     "currency": "HKD"
   },
   {
@@ -112,6 +118,12 @@
     "code": "KR",
     "name": "대한민국",
     "currency": "KRW"
+  },
+  {
+    "locale": "la",
+    "code": "LA",
+    "name": "Argentina",
+    "currency": "LAK"
   },
   {
     "locale": "lu",
@@ -220,5 +232,11 @@
     "code": "VN",
     "name": "Việt Nam",
     "currency": "VND"
+  },
+  {
+    "locale": "za",
+    "code": "ZA",
+    "name": "South Africa",
+    "currency": "ZAR"
   }
 ]
