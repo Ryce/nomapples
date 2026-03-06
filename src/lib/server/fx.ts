@@ -1,5 +1,5 @@
 const FX_URL = 'https://api.frankfurter.app/latest?from=USD';
-const FALLBACK_RATES: Record<string, number> = {
+export const FALLBACK_RATES: Record<string, number> = {
 	USD: 1,
 	EUR: 0.92,
 	JPY: 150,
@@ -47,7 +47,7 @@ export async function getUsdRates(fetchFn: typeof fetch): Promise<FxResult> {
 }
 
 export function toUsd(localPrice: number, currency: string, usdRates: Record<string, number>): number {
-	const rate = usdRates[currency];
+	const rate = usdRates[currency] ?? FALLBACK_RATES[currency];
 	if (!rate || rate <= 0) throw new Error(`Missing or invalid FX rate for ${currency}`);
 	return localPrice / rate;
 }
