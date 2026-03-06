@@ -75,6 +75,17 @@ function normalizeCode(locale) {
 	return locale.toUpperCase().replace(/-/g, '_');
 }
 
+function toEnglishJurisdictionName(locale) {
+	const [countryRaw, langRaw] = locale.toLowerCase().split('-');
+	const countryCode = countryRaw === 'uk' ? 'GB' : countryRaw.toUpperCase();
+	const regionNames = new Intl.DisplayNames(['en'], { type: 'region' });
+	const languageNames = new Intl.DisplayNames(['en'], { type: 'language' });
+	const country = regionNames.of(countryCode) ?? countryCode;
+	if (!langRaw || langRaw === 'en') return country;
+	const language = languageNames.of(langRaw) ?? langRaw;
+	return `${country} (${language})`;
+}
+
 async function fetchText(url, retries = 2) {
 	for (let attempt = 0; attempt <= retries; attempt += 1) {
 		try {
@@ -110,7 +121,7 @@ function runParser(mode, payload) {
 		input: JSON.stringify(payload),
 		encoding: 'utf8',
 		maxBuffer: 1024 * 1024 * 20,
-		timeout: 45000,
+		timeout: 180000,
 		env: { ...process.env, PYTHONWARNINGS: 'ignore' }
 	});
 	return JSON.parse(output);
@@ -224,7 +235,12 @@ async function main() {
 
 	const jurisdictions = jurisdictionsRaw
 		.filter((j) => j.currency)
-		.map(({ locale, name, code, currency }) => ({ locale, code, name, currency }))
+		.map(({ locale, code, currency }) => ({
+			locale,
+			code,
+			name: toEnglishJurisdictionName(locale),
+			currency
+		}))
 		.sort((a, b) => a.locale.localeCompare(b.locale));
 
 	stats.jurisdictionsWithCurrency = jurisdictions.length;

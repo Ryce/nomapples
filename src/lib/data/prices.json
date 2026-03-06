@@ -7,12 +7,12 @@
     },
     {
       "code": "AE_AR",
-      "name": "الإمارات العربية المتحدة",
+      "name": "United Arab Emirates (Arabic)",
       "currency": "USD"
     },
     {
       "code": "AT",
-      "name": "Österreich",
+      "name": "Austria",
       "currency": "EUR"
     },
     {
@@ -22,12 +22,12 @@
     },
     {
       "code": "BR",
-      "name": "Brasil",
+      "name": "Brazil",
       "currency": "BRL"
     },
     {
       "code": "CA",
-      "name": "Canada (English)",
+      "name": "Canada",
       "currency": "CAD"
     },
     {
@@ -37,27 +37,27 @@
     },
     {
       "code": "CZ",
-      "name": "Česko",
+      "name": "Czechia",
       "currency": "CZK"
     },
     {
       "code": "DE",
-      "name": "Deutschland",
+      "name": "Germany",
       "currency": "EUR"
     },
     {
       "code": "DK",
-      "name": "Danmark",
+      "name": "Denmark",
       "currency": "DKK"
     },
     {
       "code": "ES",
-      "name": "España",
+      "name": "Spain",
       "currency": "EUR"
     },
     {
       "code": "FI",
-      "name": "Suomi",
+      "name": "Finland",
       "currency": "EUR"
     },
     {
@@ -67,12 +67,12 @@
     },
     {
       "code": "HK",
-      "name": "Hong Kong",
+      "name": "Hong Kong SAR China",
       "currency": "HKD"
     },
     {
       "code": "HU",
-      "name": "Magyarország",
+      "name": "Hungary",
       "currency": "HUF"
     },
     {
@@ -87,22 +87,22 @@
     },
     {
       "code": "IT",
-      "name": "Italia",
+      "name": "Italy",
       "currency": "EUR"
     },
     {
       "code": "JP",
-      "name": "日本",
+      "name": "Japan",
       "currency": "JPY"
     },
     {
       "code": "KR",
-      "name": "대한민국",
+      "name": "South Korea",
       "currency": "KRW"
     },
     {
       "code": "LA",
-      "name": "Argentina",
+      "name": "Laos",
       "currency": "LAK"
     },
     {
@@ -112,7 +112,7 @@
     },
     {
       "code": "MX",
-      "name": "México",
+      "name": "Mexico",
       "currency": "MXN"
     },
     {
@@ -122,12 +122,12 @@
     },
     {
       "code": "NL",
-      "name": "Nederland",
+      "name": "Netherlands",
       "currency": "EUR"
     },
     {
       "code": "NO",
-      "name": "Norge",
+      "name": "Norway",
       "currency": "NOK"
     },
     {
@@ -142,7 +142,7 @@
     },
     {
       "code": "PL",
-      "name": "Polska",
+      "name": "Poland",
       "currency": "PLN"
     },
     {
@@ -157,12 +157,12 @@
     },
     {
       "code": "SA_AR",
-      "name": "المملكة العربية السعودية",
+      "name": "Saudi Arabia (Arabic)",
       "currency": "SAR"
     },
     {
       "code": "SE",
-      "name": "Sverige",
+      "name": "Sweden",
       "currency": "SEK"
     },
     {
@@ -172,7 +172,7 @@
     },
     {
       "code": "TH",
-      "name": "ไทย",
+      "name": "Thailand",
       "currency": "THB"
     },
     {
@@ -182,7 +182,7 @@
     },
     {
       "code": "TW",
-      "name": "台灣",
+      "name": "Taiwan",
       "currency": "TWD"
     },
     {
@@ -192,7 +192,7 @@
     },
     {
       "code": "VN",
-      "name": "Việt Nam",
+      "name": "Vietnam",
       "currency": "VND"
     },
     {

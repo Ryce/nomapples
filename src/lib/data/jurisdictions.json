@@ -8,13 +8,13 @@
   {
     "locale": "ae-ar",
     "code": "AE_AR",
-    "name": "الإمارات العربية المتحدة",
+    "name": "United Arab Emirates (Arabic)",
     "currency": "USD"
   },
   {
     "locale": "at",
     "code": "AT",
-    "name": "Österreich",
+    "name": "Austria",
     "currency": "EUR"
   },
   {
@@ -26,13 +26,13 @@
   {
     "locale": "br",
     "code": "BR",
-    "name": "Brasil",
+    "name": "Brazil",
     "currency": "BRL"
   },
   {
     "locale": "ca",
     "code": "CA",
-    "name": "Canada (English)",
+    "name": "Canada",
     "currency": "CAD"
   },
   {
@@ -44,31 +44,31 @@
   {
     "locale": "cz",
     "code": "CZ",
-    "name": "Česko",
+    "name": "Czechia",
     "currency": "CZK"
   },
   {
     "locale": "de",
     "code": "DE",
-    "name": "Deutschland",
+    "name": "Germany",
     "currency": "EUR"
   },
   {
     "locale": "dk",
     "code": "DK",
-    "name": "Danmark",
+    "name": "Denmark",
     "currency": "DKK"
   },
   {
     "locale": "es",
     "code": "ES",
-    "name": "España",
+    "name": "Spain",
     "currency": "EUR"
   },
   {
     "locale": "fi",
     "code": "FI",
-    "name": "Suomi",
+    "name": "Finland",
     "currency": "EUR"
   },
   {
@@ -80,13 +80,13 @@
   {
     "locale": "hk",
     "code": "HK",
-    "name": "Hong Kong",
+    "name": "Hong Kong SAR China",
     "currency": "HKD"
   },
   {
     "locale": "hu",
     "code": "HU",
-    "name": "Magyarország",
+    "name": "Hungary",
     "currency": "HUF"
   },
   {
@@ -104,25 +104,25 @@
   {
     "locale": "it",
     "code": "IT",
-    "name": "Italia",
+    "name": "Italy",
     "currency": "EUR"
   },
   {
     "locale": "jp",
     "code": "JP",
-    "name": "日本",
+    "name": "Japan",
     "currency": "JPY"
   },
   {
     "locale": "kr",
     "code": "KR",
-    "name": "대한민국",
+    "name": "South Korea",
     "currency": "KRW"
   },
   {
     "locale": "la",
     "code": "LA",
-    "name": "Argentina",
+    "name": "Laos",
     "currency": "LAK"
   },
   {
@@ -134,7 +134,7 @@
   {
     "locale": "mx",
     "code": "MX",
-    "name": "México",
+    "name": "Mexico",
     "currency": "MXN"
   },
   {
@@ -146,13 +146,13 @@
   {
     "locale": "nl",
     "code": "NL",
-    "name": "Nederland",
+    "name": "Netherlands",
     "currency": "EUR"
   },
   {
     "locale": "no",
     "code": "NO",
-    "name": "Norge",
+    "name": "Norway",
     "currency": "NOK"
   },
   {
@@ -170,7 +170,7 @@
   {
     "locale": "pl",
     "code": "PL",
-    "name": "Polska",
+    "name": "Poland",
     "currency": "PLN"
   },
   {
@@ -188,13 +188,13 @@
   {
     "locale": "sa-ar",
     "code": "SA_AR",
-    "name": "المملكة العربية السعودية",
+    "name": "Saudi Arabia (Arabic)",
     "currency": "SAR"
   },
   {
     "locale": "se",
     "code": "SE",
-    "name": "Sverige",
+    "name": "Sweden",
     "currency": "SEK"
   },
   {
@@ -206,7 +206,7 @@
   {
     "locale": "th",
     "code": "TH",
-    "name": "ไทย",
+    "name": "Thailand",
     "currency": "THB"
   },
   {
@@ -218,7 +218,7 @@
   {
     "locale": "tw",
     "code": "TW",
-    "name": "台灣",
+    "name": "Taiwan",
     "currency": "TWD"
   },
   {
@@ -230,7 +230,7 @@
   {
     "locale": "vn",
     "code": "VN",
-    "name": "Việt Nam",
+    "name": "Vietnam",
     "currency": "VND"
   },
   {
